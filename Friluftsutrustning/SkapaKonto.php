@@ -14,10 +14,8 @@ include 'connect.php'
     <body>
         <div id="content">
             <div id="top">
-               <div id="banner" >
-               <h1>UTOMHUS MED WICKI!</h1>
+               <div id="banner" >               <h1>UTOMHUS MED WICKI!</h1> 
                </div>
-               
             </div>
             <div id="left">
 					<div class="dokument-item">
@@ -25,18 +23,28 @@ include 'connect.php'
 					</div>
             </div>
             <div id="center">
-				Mitten kolumnen!!
-                <div id="info">
-</div>
-</div>
-            <div id="right">				    								
-              					<b><p>Logga in!</p></b>
+					<b><p>Logga in!</p></b>
 									<form name="login" action="login.php" method="post">
 									<p>Användarnamn: <br/><input type="text" name="user"/></p>
 									<p>Lösenord:&nbsp;&nbsp;<br/> <input type="password" name="pwd"/></p>
 								<input type="submit" value="Logga in"/>
 								</form><br/>
-								<a href="SkapaKonto.php"> Skapa ett konto</a>
+								<br/>
+								<br/>
+								<br/>
+					<b><p>Skapa ett konto!</p></b>
+									<form name="skapakonto" action="registrering.php" method="post">
+									<p>Användarnamn: <br/><input type="text" name="user"/></p>
+									<p>Lösenord:&nbsp;&nbsp;<br/> <input type="password" name="pwd"/></p>
+									<p>E-mail:&nbsp;&nbsp;<br/> <input type="text" name="mail"/></p>
+								<input type="submit" value="Registrera dig!"/>
+								</form><br/>
+                <div id="info">
+				
+</div>
+</div>
+            <div id="right">				    								
+              				
             </div>
 
 			<div id="footer">

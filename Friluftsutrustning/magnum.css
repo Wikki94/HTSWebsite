@@ -2,14 +2,21 @@
  *Generell tagar för hela dokumentet
  **************************************/
 body{
-	font-family: "Tahoma", "DejaVu Sans","Sans-Serif";
-	font-size: 10pt;
+	font-family: "Baskerville Old Face", "Britannic Bold","High Tower Text";
+	font-size: 11pt;
 }
 
 h1 {
 	font-size: 25pt;
 	text-align: center;
 }
+
+/* För att få rätt färger på länkar*/
+
+A:link {text-decoration: none; color: black;}
+A:visited {text-decoration: none; color: black;}
+A:active {text-decoration: none; color: black;}
+A:hover {text-decoration: underline; color:#00511B;}
 
 /***************************************
  * För att få rätt bakgrunds färger
