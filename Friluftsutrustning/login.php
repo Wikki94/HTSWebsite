@@ -8,8 +8,8 @@ include 'connect.php';
 		 session_start();
 		 session_unset();
          if (mysql_numrows($result) == 1) {
-		      $_SESSION['session_user']=$_POST[myUser];
-			  header('Location: indexEfterLogin.html');
+		      $_SESSION['session_user']=$_POST[user];
+			  header('Location: indexEfterLogin.php');
 		 }
 		 else {
 			  header('Location: index.html');

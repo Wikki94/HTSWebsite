@@ -3,16 +3,16 @@ include 'connect.php';
 
 session_start();
 if(isset($_SESSION['session_user'])){
-	header('Location: indexEfterLogin.html');
+	header('Location: indexEfterLogin.php');
 }
 
 
 
-$query = "INSERT INTO user (`e-mail`, `password`, `username`) VALUES ('$_POST[mail]',md5('$_POST[pwd]'),'$_POST[user]')";         //echo '<em> ' . $query . ' </em>';
+$query = "INSERT INTO post (`user`,`text`) VALUES ('$_SESSION[session_user]','$_POST[post]')";         //echo '<em> ' . $query . ' </em>';
+		 echo $query;        
 		         $result = mysql_query($query);
          if ($result === false) {
 	      echo '<strong> Error when trying to add data to database. ' . mysql_error . ' : <br />' . mysql_error . '</strong>';
         }
-        
-		header('Location: index.html');
+       header('Location: indexEfterLogin.php');
 ?>
