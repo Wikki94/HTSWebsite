@@ -32,11 +32,10 @@ include 'connect.php'
             <div id="center">
 				                <div id="info">
 				                <?php
-         $query = "SELECT user,text,tid FROM post";
-         //echo '<em> ' . $query . ' </em>';
-         $result = mysql_query($query);
+         $query = "SELECT user,text,tid FROM post ORDER BY tid DESC";
+                  $result = mysql_query($query);
          if ($result === false) {
-	         echo '<strong> Error when you asked a question to your databas. ' . mysql_errno . ' : <br />' . mysql_error . '</strong>';
+	         echo '<strong> Error when you asked a question to your database. ' . mysql_errno . ' : <br />' . mysql_error . '</strong>';
         }
 
          $num=mysql_numrows($result);
@@ -47,7 +46,7 @@ include 'connect.php'
              echo "<ul>";
              for ($i=0;$i<$num;$i++) {
                  $temp = mysql_fetch_array($result);
-	             echo "<b>" . $temp["user"]."</b>&nbsp;skrev&nbsp;".$temp["tid"]."<br/>".$temp["text"] . "</br></br></br>";
+                 echo "<b>" . $temp["user"]."</b>&nbsp;skrev&nbsp;".$temp["tid"]."<br/>".$temp["text"] . "</br></br></br>";
              }
              echo "</ul>";
         }
@@ -56,6 +55,34 @@ include 'connect.php'
 </div>
             <div id="right">				    								
               					Välkommen!
+              					<b><p>Vill du göra en sökning?</p></b>
+              					<form name="Search" action="IndexEfterLogin.php" method="post">
+									<p><br/><input type="text" name="sökning"/></p>
+									<br/>
+								<input type="submit" value="Sök"/>
+								</form><br/>
+								<?php
+								"SELECT user, text, tid FROM post WHERE 'user' LIKE '%$_POST[sökning]%' ORDER BY tid DESC";
+								$result = mysql_query($query);
+       			  if ($result === false) {
+	       		  echo '<strong> Error when you asked a question to your database. ' . mysql_errno . ' : <br />' . mysql_error . '</strong>';
+       			 }
+
+       			  $num=mysql_numrows($result);
+       			  if($num==0) {
+        	     echo '<strong>Your question is empty</strong>';
+    		     }
+      			   else {
+          	   echo "<ul>";
+          	   for ($i=0;$i<$num;$i++) {
+                 $temp = mysql_fetch_array($result);
+                 echo "<b>" . $temp["user"]."</b>&nbsp;skrev&nbsp;".$temp["tid"]."<br/>".$temp["text"] . "</br></br></br>";
+        	     }
+        	     echo "</ul>";
+        		}
+
+				?>
+
             </div>
 
 			<div id="footer">

@@ -19,7 +19,7 @@ include 'connect.php'
             </div>
             <div id="left">
 					<div class="dokument-item">
-						Länkar!
+						Du måste vara inloggad för att skriva inlägg!
 					</div>
             </div>
             <div id="center">
